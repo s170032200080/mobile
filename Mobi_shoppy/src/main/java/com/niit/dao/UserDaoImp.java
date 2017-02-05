@@ -14,12 +14,12 @@ public class UserDaoImp implements UserDao {
 	@Autowired
 	 SessionFactory sessionFactory;
 
-	public int add(User u) {
+	public int insertRow(User user) {
 		 Session session = sessionFactory.openSession();
 		  Transaction tx = session.beginTransaction();
-		  session.saveOrUpdate(u);
+		  session.saveOrUpdate(user);
 		  tx.commit();
-		  Serializable id = session.getIdentifier(u);
+		  Serializable id = session.getIdentifier(user);
 		  session.close();
 		  return (Integer) id;
 	}
@@ -27,10 +27,41 @@ public class UserDaoImp implements UserDao {
 	public List<User> list() {
 		Session session = sessionFactory.openSession();
 		  @SuppressWarnings("unchecked")
-		  List uList = session.createQuery("from User")
+		  List<User> uList = session.createQuery("from User")
 		    .list();
 		  session.close();
 		  return uList;
+	}
+
+	
+
+	public User getRowById(int id) {
+		Session session = sessionFactory.openSession();
+		  User user = (User) session.load(User.class, id);
+		  return user;
+		  }
+
+	
+
+	public int updateRow(User user) {
+		Session session = sessionFactory.openSession();
+		  Transaction tx = session.beginTransaction();
+		  session.saveOrUpdate(user);
+		  tx.commit();
+		  Serializable id = session.getIdentifier(user);
+		  session.close();
+		  return (Integer) id;
+	}
+
+	public int deleteRow(int id) {
+		 Session session = sessionFactory.openSession();
+		  Transaction tx = session.beginTransaction();
+		  User user = (User) session.load(User.class, id);
+		  session.delete(user);
+		  tx.commit();
+		  Serializable ids = session.getIdentifier(user);
+		  session.close();
+		  return (Integer) ids;
 	}
 
 }

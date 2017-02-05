@@ -69,9 +69,9 @@ footer {
 				</ul>
 			</div>
 		</div>
-	</nav>
-	
-<div class="container">
+	</nav> 
+
+<div class="container"> 
 <div class="row">
   <div class="col-sm-8">
      <div id="myCarousel" class="carousel slide" data-ride="carousel">

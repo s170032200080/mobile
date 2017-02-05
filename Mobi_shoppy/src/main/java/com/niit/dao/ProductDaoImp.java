@@ -29,7 +29,7 @@ public class ProductDaoImp implements ProductDao {
 	public List<Product> getList() {
 		  Session session = sessionFactory.openSession();
 		  @SuppressWarnings("unchecked")
-		  List productList = session.createQuery("from Product")
+		  List<Product> productList = session.createQuery("from Product")
 		    .list();
 		  session.close();
 		  return productList;
@@ -55,5 +55,10 @@ public class ProductDaoImp implements ProductDao {
 		  session.close();
 		  return (Integer) ids;
 	}
+
+	public Product getRowById(int id) {
+		  Session session = sessionFactory.openSession();
+		  Product product = (Product) session.load(Product.class, id);
+		  return product;}
 
 }

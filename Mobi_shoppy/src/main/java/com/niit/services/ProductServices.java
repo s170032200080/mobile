@@ -7,10 +7,12 @@ import com.niit.model.Product;
 public interface ProductServices {
 	public int insertRow(Product product);
 
-	 public List<Product> getList();
+	public List<Product> getList();
 
-	 public int updateRow(Product product);
+	public Product getRowById(int id);
 
-	 public int deleteRow(int id);
+	public int updateRow(Product product);
+
+	public int deleteRow(int id);
 
 }

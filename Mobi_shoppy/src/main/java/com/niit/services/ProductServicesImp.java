@@ -27,4 +27,8 @@ public class ProductServicesImp implements ProductServices {
 		 return productDao.deleteRow(id);
 	}
 
+	public Product getRowById(int id) {
+		 return productDao.getRowById(id);
+	}
+
 }
