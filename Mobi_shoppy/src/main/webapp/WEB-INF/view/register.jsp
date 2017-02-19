@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,40 +51,38 @@
 		</div>
 	</nav>
 	<div class="container">
-	<div class="jumbotron">
-          <form>
+	<form:form method="POST" class="form-horizontal">
      <div class="form-group">
 	<label for="name"><span class="glyphicon glyphicon-user"> </span> User name:</label> 
-	<input type="text" class="form-control" id="username" placeholder="Enter username">
+	<form:input path="username" type="text" class="form-horizontal"  id="username" placeholder="Enter username"/>
 	 </div>
 	  <div class="form-group">
 	<label for="email"><span class="glyphicon glyphicon-envelope"> </span> Email id:</label> 
-	<input type="text" class="form-control" id="email" placeholder="Enter mailid">
+	<form:input path="email" type="text" class="form-horizontal" id="email" placeholder="Enter mailid"/>
 	 </div>
      <div class="form-group">
 	<label for="password"><span class="glyphicon glyphicon-lock"> </span> Password:</label> 
-	<input type="text" class="form-control" id="pwd" placeholder="Enter password">
+	<form:input path="pwd" type="text" class="form-horizontal" id="pwd" placeholder="Enter password"/>
 	 </div>
      <div class="form-group">
 	<label for="password"><span class="glyphicon glyphicon-lock"> </span> Retype password:</label> 
-	<input type="text" class="form-control" id="cpwd" placeholder="Retype password">
+	<form:input path="cpwd" type="text" class="form-horizontal" id="cpwd" placeholder="Retype password"/>
 	 </div>
 	  <div class="form-group">
 	<label for="mobileno"><span class="glyphicon glyphicon-earphone" > </span> Mobile number:</label> 
-	<input type="text" class="form-control" id="mobileno" placeholder="Mobile number">
+	<form:input path="mobileno" class="form-horizontal" type="text"  id="mobileno" placeholder="Mobile number"/>
 	 </div>
 	  <div class="form-group">
 	<label for="address"> Address:</label> 
-	<input type="text" class="form-control" id="address" placeholder="Address">
+	<form:input path="address" type="text" class="form-horizontal" id="address" placeholder="Address"/>
 	 </div>
     
     <div class="checkbox">
       <label><input type="checkbox">Remember me</label>
     </div>
     <button type="submit" class="btn btn-success">Sign up</button>
-  </form>
   </div>
-  </div>
+  </form:form>
  </body>
 </html>
 
