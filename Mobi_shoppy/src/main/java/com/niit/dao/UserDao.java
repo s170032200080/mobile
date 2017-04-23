@@ -5,15 +5,16 @@ import java.util.List;
 import com.niit.model.User;
 
 public interface UserDao {
+	public void add(User user);
 
-	public int insertRow(User user);
+	public void update(User user);
+	
+	public User edit(int cid);
 
-	public List<User> list();
+	public void delete(int cid);
 
-	public User getRowById(int id);
+	public User getUser(int cid);
 
-	public int updateRow(User user);
-
-	public int deleteRow(int id);
+	public List<User> getAllUser();
 
 }

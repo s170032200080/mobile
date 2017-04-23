@@ -1,18 +1,21 @@
 package com.niit.dao;
 
+
 import java.util.List;
 
 import com.niit.model.Product;
 
 public interface ProductDao {
+	public void add(Product product);
 
-	public int insertRow(Product product);
+	public void update(Product product);
+	
+	public Product edit(int pid);
 
-	public List<Product> getList();
+	public void delete(int pid);
 
-	public Product getRowById(int id);
+	public Product getProduct(int pid);
 
-	public int updateRow(Product product);
+	public List<Product> list();
 
-	public int deleteRow(int id);
 }

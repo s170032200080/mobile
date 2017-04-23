@@ -1,53 +1,72 @@
 package com.niit.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "Product")
 public class Product {
-	public int pid;
-	public String name;
-	public String description;
-	public String amount;
-	public String total;
-	
-	public Product(int pid,String name,String description,String amount,String total)
-	{
-		this.pid=pid;
-		this.name=name;
-		this.description=description;
-		this.amount=amount;
-		this.total=total;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	private int pid;
+	@NotNull
+	@Column
+	private String name;
+	@NotNull
+	@Column
+	private String description;
+	@NotNull
+	@Column
+	private int amount;
+
+	public Product() {
+
 	}
-	
-	
-	public int getPid() {
+
+	public Product(int productid, String name, String description, int amount) {
+		this.pid = productid;
+		this.name = name;
+		this.description = description;
+		this.amount = amount;
+
+	}
+
+	public int getProductid() {
 		return pid;
 	}
-	public void setPid(int pid) {
-		this.pid = pid;
+
+	public void setProductid(int productid) {
+		this.pid = productid;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getAmount() {
+
+	public int getAmount() {
 		return amount;
 	}
-	public void setAmount(String amount) {
+
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	public String getTotal() {
-		return total;
-	}
-	public void setTotal(String total) {
-		this.total = total;
-	}
 
-	
 }
-
